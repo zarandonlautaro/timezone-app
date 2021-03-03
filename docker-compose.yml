@@ -1,0 +1,34 @@
+version: "2"
+services:
+  client:
+    image: timezone-app
+    restart: always
+    ports:
+      - 3000:3000
+    links:
+      - api
+  api:
+    image: timezone-api
+    restart: always
+    command: node index.js
+    ports:
+      - 8000:8000
+    depends_on:
+      - mongo
+  mongo-express:
+    #Visit http://localhost:8081/ to enter the mongodbpanel
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongo
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: admin
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin

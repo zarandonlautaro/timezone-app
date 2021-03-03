@@ -1,0 +1,18 @@
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+
+  max-width: 935px;
+  min-height: 100vh;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  background-color: #f3f2ef;
+}
+
+@media only screen and (max-width: 500px) {
+  .wrapper {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

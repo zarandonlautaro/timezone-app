@@ -1,0 +1,33 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(1, 250px);
+  grid-template-rows: 1fr 0.5fr;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header div {
+  margin-top: -2px;
+  background-color: #ffffff;
+  border-radius: 5px 0 5px 0px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  grid-template-rows: 1fr;
+}
+
+@media only screen and (max-width: 500px) {
+  .header {
+    display: flex;
+    padding: 10px 0;
+  }
+
+  .content {
+    display: block;
+    position: relative;
+  }
+}
