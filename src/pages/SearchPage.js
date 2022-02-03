@@ -8,32 +8,7 @@ import "./SearchPage-module.css";
 function SearchPage() {
     const [loading, setLoading] = useState(false);
     const [input, setInput] = useState("");
-    const [timezoneList, setTimezoneList] = useState([
-        {
-            _id: "61fc569aec84f90016367f7f",
-            timezone: "Africa/Accra",
-            unixtime: "1643927194",
-            __v: 0,
-        },
-        {
-            _id: "61fc4be730748500167fe204",
-            timezone: "Africa/Abidjan",
-            unixtime: "1643924455",
-            __v: 0,
-        },
-        {
-            _id: "61fc4b5130748500167fe1fe",
-            timezone: "America/Argentina/Buenos_Aires",
-            unixtime: "1643924305",
-            __v: 0,
-        },
-        {
-            _id: "61fc4b4830748500167fe1f8",
-            timezone: "America/Rio_Branco",
-            unixtime: "1643924296",
-            __v: 0,
-        },
-    ]);
+    const [timezoneList, setTimezoneList] = useState([]);
     const [timezoneListAPI, setTimezoneListAPI] = useState([]);
     const [timezoneListDefault, setTimezoneListDefault] = useState([]);
     const [predictions, setPredictions] = useState();
@@ -142,11 +117,11 @@ function SearchPage() {
     };
 
     useEffect(() => {
-        // fetchTimezonesFavorites();
+        fetchTimezonesFavorites();
     }, []);
 
     useEffect(() => {
-        // fetchTimezones();
+        fetchTimezones();
     }, []);
 
     return (
