@@ -26,7 +26,8 @@
     }
 
     .content {
-        display: block;
-        position: relative;
+        display: flex;
+        overflow-y: auto;
+        padding: 0 1.25rem;
     }
 }

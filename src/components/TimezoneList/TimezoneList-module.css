@@ -24,6 +24,7 @@
 .clock {
     display: flex;
     justify-content: center;
+    padding: 1.25rem 0;
 }
 .text {
     color: #000;
@@ -34,12 +35,7 @@
 
 @media only screen and (max-width: 768px) {
     .box {
-        max-width: 80%;
-        min-height: 15rem;
-        display: flex;
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, 0);
+        padding: 1.25rem;
     }
 
     .box-container {

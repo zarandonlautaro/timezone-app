@@ -42,6 +42,7 @@ function SearchPage() {
     };
 
     const onChangeSearch = async (input) => {
+        setInput(input);
         setLoading(true);
         if (input.length === 0) {
             setPredictions();
@@ -129,16 +130,16 @@ function SearchPage() {
             <div className="header">
                 <h1 style={{ textAlign: "center" }}>Our timezones</h1>
                 <SearchBar
-                    input={input}
+                    value={input}
                     onChange={onChangeSearch}
                     handleKeyDown={handleKeyDown}
-                />
-                <PredictionsBar
-                    predictions={predictions}
-                    handlePrediction={handlePrediction}
-                />
+                >
+                    <PredictionsBar
+                        predictions={predictions}
+                        handlePrediction={handlePrediction}
+                    />
+                </SearchBar>
             </div>
-            <div></div>
             <div className="content">
                 {!loading ? (
                     <TimezoneList
